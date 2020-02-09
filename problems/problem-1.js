@@ -12,7 +12,7 @@
 //     3: 14,
 // }
 
-module.exports = function(arr, k) {
+function solution(arr, k) {
     const visited = {};
 
     for (let ii=0; ii<arr.length; ii++) {
@@ -29,3 +29,20 @@ module.exports = function(arr, k) {
 
     return false;
 }
+
+function es6Solution(arr, k) {
+    const visited = {};
+
+    return arr.some((current, ii) => {
+        const neededForK = k-current;
+
+        if (typeof visited[neededForK] === 'undefined') {
+            visited[current] = neededForK;
+            return false;
+        }
+
+        return true;
+    });
+}
+
+module.exports = { solution, es6Solution };
