@@ -10,33 +10,33 @@ function solution(arr) {
     let m=1;
     let totalZeros = 0;
 
-    for(let i=0; i < arr.length; i++) {
-        if (arr[i] === 0) {
+    for(let ii=0; ii < arr.length; ii++) {
+        if (arr[ii] === 0) {
             totalZeros++; 
 
             if (totalZeros > 1) {
                 let result = [];
-                for(let i=0; i < arr.length; i++) {
-                    result[i] = 0;
+                for(let jj=0; jj < arr.length; jj++) {
+                    result[jj] = 0;
                 }
                 return result;
             }
 
             continue;
         }
-        m = m * arr[i];
+        m = m * arr[ii];
     }
 
 
     let result = [];
 
-    for(let i=0; i < arr.length; i++) {
-        if (arr[i] === 0) {
-            result[i] = m;
+    for(let kk=0; kk < arr.length; kk++) {
+        if (arr[kk] === 0) {
+            result[kk] = m;
         } else if(totalZeros > 0) {
-            result[i] = 0;
+            result[kk] = 0;
         } else {
-            result[i] = m/arr[i];
+            result[kk] = m/arr[kk];
         }
     }
 
