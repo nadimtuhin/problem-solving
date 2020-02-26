@@ -19,10 +19,10 @@ function ListNode(val, next = null) {
 }
 
 function addTwoNumbers(l1, l2, onHand=0) {
-    let v1 = (l1 && l1.val) || 0;
-    let v2 = (l2 && l2.val) || 0;
-    let val = v1+v2+onHand;
-    
+    let v1 = l1 && l1.val;
+    let v2 = l2 && l2.val;
+    let val = v1 + v2 + onHand;
+
     onHand  = 0
 
     if (val >= 10) {
