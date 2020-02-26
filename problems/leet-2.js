@@ -23,12 +23,8 @@ function addTwoNumbers(l1, l2, onHand=0) {
     let v2 = l2 && l2.val;
     let val = v1 + v2 + onHand;
 
-    onHand  = 0
-
-    if (val >= 10) {
-        val = val - 10;
-        onHand = 1;
-    }
+    onHand = Math.floor(val/10);
+    val = val%10;
 
     let next1 = l1 && l1.next;
     let next2 = l2 && l2.next;
