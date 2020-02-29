@@ -52,12 +52,14 @@ function serialize(node, arr=[], rootIndex=1) {
 
 function deserialize(serializedNode, rootIndex=1) {
     if (typeof serializedNode[rootIndex] === 'undefined') return null;
+    let leftNode = deserialize(serializedNode, getLeftIndex(rootIndex));
+    let rightNode = deserialize(serializedNode, getRightIndex(rootIndex));
 
     return Node(
         serializedNode[rootIndex], 
-        deserialize(serializedNode, getLeftIndex(rootIndex)),
-        deserialize(serializedNode, getRightIndex(rootIndex))
-    )
+        leftNode,
+        rightNode
+    );
 }
 
 module.exports = { serialize, deserialize, Node };
