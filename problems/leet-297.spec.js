@@ -1,4 +1,4 @@
-const { serialize, deserialize, Node } = require('./problem-3');
+const { serialize, deserialize, Node } = require('./leet-297');
 
 it('should test serialize and deserialize', function() {
     const node = Node('root', Node('left', Node('left.left')), Node('right'));
