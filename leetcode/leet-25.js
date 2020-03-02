@@ -20,7 +20,7 @@ function Node(val, left, right) {
     return { val, left, right };
 }
 
-function solution() {
+function solution(list) {
 
 }
 
