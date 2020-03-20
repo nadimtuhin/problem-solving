@@ -1,0 +1,2 @@
+echo "function solution() {\n}\n\nmodule.exports = { solution }" >> $1/$1-$2.js
+echo "const { solution } = require('./$1-$2');\n\nit('should test', () => {\n expect(solution()).toBe()\n})" >> $1/$1-$2.spec.js

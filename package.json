@@ -7,6 +7,7 @@
     "jest": "^25.1.0"
   },
   "scripts": {
-    "test": "jest --watch"
+    "start": "jest --watch",
+    "boot": "./scripts/create.sh"
   }
 }
