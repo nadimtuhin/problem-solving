@@ -14,7 +14,7 @@ function pollution(A) {
   // apply filters until we have reduced pollution to at least half
   while(totalPollution > requiredPollution) {
     // we will apply filter on the most populated factory right now
-    let maxIndex = A.indexOf(Math.max(...A)); // O(N) inside a loop
+    let maxIndex = A.indexOf(Math.max(...A)); // O(N) inside a loop, we could may be sort it at first
     let currentlyMostPolluted = A[maxIndex];
 
     // apply filter and increase filter count
