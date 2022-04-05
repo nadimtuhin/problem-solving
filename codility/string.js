@@ -16,7 +16,7 @@ if (!String.prototype.trimEnd) {
 function solution(message, K) {
     // write your code in JavaScript (Node.js 8.9.4)
     if (message.length <= K) {
-        return message.trimEnd();
+      return message.trimEnd();
     }
 
     let short = message.slice(0, K);
