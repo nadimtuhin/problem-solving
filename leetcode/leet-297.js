@@ -1,7 +1,7 @@
 // This problem was asked by Google.
 
-// Given the root to a binary tree, 
-// implement serialize(root), which serializes the tree into a string, and deserialize(s), 
+// Given the root to a binary tree,
+// implement serialize(root), which serializes the tree into a string, and deserialize(s),
 // which deserializes the string back into the tree.
 
 // class Node:
@@ -9,6 +9,7 @@
 //         self.val = val
 //         self.left = left
 //         self.right = right
+
 
 
 // For example, given the following Node class
@@ -56,7 +57,7 @@ function deserialize(serializedNode, rootIndex=1) {
     let rightNode = deserialize(serializedNode, getRightIndex(rootIndex));
 
     return Node(
-        serializedNode[rootIndex], 
+        serializedNode[rootIndex],
         leftNode,
         rightNode
     );

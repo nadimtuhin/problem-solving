@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "jest --watch",
+    "watch": "jest --watch --onlyChanged",
     "test": "jest --watch",
     "boot": "./scripts/create.sh"
   }
