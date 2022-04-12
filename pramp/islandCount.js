@@ -1,13 +1,12 @@
 function islandCount(matrix) {
-  let row = matrix.length;
-  let col = matrix[0].length;
+  let totalRows = matrix.length;
+  let totalCols = matrix[0].length;
   let counter = 0;
 
-  for(let i = 0; i < row; i++) {
-    for(let j = 0; j < col; j++) {
-      if(matrix[i][j] === 1) {
-        recursiveIslandMarker(matrix, i, j, row, col);
-        console.log('done');
+  for(let currentRow = 0; currentRow < totalRows; currentRow++) {
+    for(let currentCol = 0; currentCol < totalCols; currentCol++) {
+      if(matrix[currentRow][currentCol] === 1) {
+        recursiveIslandMarker(matrix, currentRow, currentCol, totalRows, totalCols);
         counter++;
       }
     }
@@ -16,27 +15,32 @@ function islandCount(matrix) {
   return counter;
 }
 
-function recursiveIslandMarker(matrix, i, j, row, col) {
-  console.log('entered', i, j);
-  matrix[i][j] = -1; // replace visited
-  if(j-1>=0 && j-1<col) {
-    let left = matrix[i][j-1];
-    if(left === 1) recursiveIslandMarker(matrix, i, j-1);
+function recursiveIslandMarker(matrix, currentRow, currentCol, totalRows, totalCols) {
+  matrix[currentRow][currentCol] = -1; // replace visited
+
+  let leftIndex = currentCol-1,
+    rightIndex = currentCol+1,
+    topIndex = currentRow-1,
+    bottomIndex = currentRow+1;
+
+  if(leftIndex>=0 && totalCols>leftIndex) {
+    let left = matrix[currentRow][leftIndex];
+    if(left === 1) recursiveIslandMarker(matrix, currentRow, leftIndex, totalRows, totalCols);
   }
 
-  if(j+1>=0 && j+1<col) {
-    let right = matrix[i][j+1];
-    if(right === 1) recursiveIslandMarker(matrix, i, j+1);
+  if(rightIndex>=0 && totalCols>rightIndex) {
+    let right = matrix[currentRow][rightIndex];
+    if(right === 1) recursiveIslandMarker(matrix, currentRow, rightIndex, totalRows, totalCols);
   }
 
-  if(i+1>=0 && i+1<row) {
-    let bottom = matrix[i+1][j];
-    if(bottom === 1) recursiveIslandMarker(matrix, i+1, j);
+  if(topIndex>=0 && totalRows>topIndex) {
+    let bottom = matrix[topIndex][currentCol];
+    if(bottom === 1) recursiveIslandMarker(matrix, topIndex, currentCol, totalRows, totalCols);
   }
 
-  if(i-1>=0 && i-1<row) {
-    let top = matrix[i-1][j];
-    if(top === 1) recursiveIslandMarker(matrix, i-1, j);
+  if(bottomIndex>=0 && totalRows>bottomIndex) {
+    let top = matrix[bottomIndex][currentCol];
+    if(top === 1) recursiveIslandMarker(matrix, bottomIndex, currentCol, totalRows, totalCols);
   }
 }
 
