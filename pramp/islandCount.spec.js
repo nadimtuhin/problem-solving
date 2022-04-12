@@ -9,5 +9,5 @@ it('should test islandCount', () => {
     [1,    0,    1,    0,    1] ];
 
 
-//  expect(islandCount(binaryMatrix)).toBe(6);
+ expect(islandCount(binaryMatrix)).toBe(6);
 })

@@ -6,9 +6,6 @@ function indexElementEquity(arr) {
   while(low < high) {
     let val = arr[high];
 
-    console.log(arr);
-    console.log(low, high, val);
-
     if(high === val) {
       result = val;
     }
