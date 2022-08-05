@@ -14,5 +14,8 @@
   },
   "volta": {
     "node": "16.16.0"
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
   }
 }
