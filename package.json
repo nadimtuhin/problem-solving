@@ -11,5 +11,8 @@
     "watch": "jest --watch --onlyChanged",
     "test": "jest --watch",
     "boot": "./scripts/create.sh"
+  },
+  "volta": {
+    "node": "16.16.0"
   }
 }
