@@ -235,4 +235,6 @@ temp/
 # Ignore all local history of files
 .history
 
-# End of https://www.gitignore.io/api/node,macos,intellij,visualstudiocode
+# End of https://www.gitignore.io/api/node,macos,intellij,visualstudiocodenode_modules
+dist
+build
